@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int Factorials (int angka) {
+	int hasil,i;
+	hasil = 1;
+	for(i=1;i<=angka;i++) {
+		hasil = hasil * i;
+	}
+	return hasil;
+}
+
+int PrimeNumber(int n) { 
+  int i;
+  bool angka_prima = true;
+  if (n == 0 || n == 1) {
+    angka_prima = false;
+  }
+  else {
+    for (i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        angka_prima = false;
+        break;
+      }
+    }
+  }
+  if (angka_prima)
+    return n;
+  else
+    return 0;
+ 
+ cout << endl;
+ return 0;
+}
+
+int main() {
+	int nilai;
+	cout << "Masukan batas dari deret : "; cin >> nilai;
+	cout << endl;
+	cout << "==========================================" <<  endl;
+	cout << "Bil              Prima           Factorial";
+	for (int numbo; numbo <= nilai; numbo ++) {
+		int x = Factorials(numbo);
+		int y = PrimeNumber(numbo);
+		if (y == 0) {
+			cout << numbo << "                   " << "-" << "                   " << x << endl;
+		} else {
+			cout << numbo << "                   " << y << "                   " << x << endl;
+		}
+			
+	}
+	cout << endl;
+	cout << "==========================================" <<  endl;
+}
